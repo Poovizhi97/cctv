@@ -1,13 +1,14 @@
 var cctvModel = require("../model/cctv-model");
 
 var cctvService = {
-    getAllcctv_details:getAllcctv_details,
-    addcctv_detail:addcctv_detail
+    getAllattendance_details:getAllattendance_details,
+    addattendance_detail:addattendance_detail,
+    adddate_time:adddate_time
 }
 
-function getAllcctv_details() {
+function getAllattendance_details() {
     return new Promise((resolve,reject) => {
-        cctvModel.getAllcctv_details().then((data)=>{
+        cctvModel.getAllattendance_details().then((data)=>{
             resolve(data);
         }).catch((err) => {
             reject(err);
@@ -15,10 +16,22 @@ function getAllcctv_details() {
     });
 }
 
-function addcctv_detail(cctv_id,cctv_name,emp_name,percentage,location,time)
+function addattendance_detail(emp_id,emp_name,device_id,time,date)
  {
     return new Promise((resolve,reject) => {
-        cctvModel.addcctv_detail(cctv_id,cctv_name,emp_name,percentage,location,time).then((data)=>{
+        cctvModel.addattendance_detail(emp_id,emp_name,device_id,time,date).then((data)=>{
+            resolve(data);
+        }).catch((err) => {
+            reject(err);
+        })
+    })
+   
+}
+
+function adddate_time(id,emp_name,intime,outtime,date)
+ {
+    return new Promise((resolve,reject) => {
+        cctvModel.addattendance_detail(id,emp_name,intime,outtime,date).then((data)=>{
             resolve(data);
         }).catch((err) => {
             reject(err);

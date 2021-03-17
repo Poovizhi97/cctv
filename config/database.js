@@ -6,5 +6,5 @@ module.exports = mysql.createPool({
     port:'3306',    
     user :  'admin',
     password: 'coitor123',
-    database: 'CCTV'
+    database: 'cctv_attendance'
 })

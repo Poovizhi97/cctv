@@ -1,0 +1,50 @@
+{
+    "getSchema":{
+       "type": "object",
+       "required": [
+         "emp_id"     
+       ],
+       "properties": {
+         "emp_id" : {
+           "type": "string"
+         }
+       }
+    },
+    "postSchema":{
+        "type": "object",
+        "required": [
+          "emp_name"     
+        ],
+        "properties": {
+          "name" : {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10
+          },
+          "designation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10
+          },
+          "mobile_no" : {
+            "type" : "integer",
+            "minimum": 1
+          },
+          "mail_id":{
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10
+          },
+          "face_temp": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10
+          },
+          "emp_img": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10
+          }
+        }
+     }
+}

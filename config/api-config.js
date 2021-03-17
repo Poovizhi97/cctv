@@ -8,9 +8,10 @@ var db = require('./database');
 var dbFunc = require('./db-function');
 var http  = require('http')
 var bodyParser = require('body-parser');
-var cctvRoute = require('../app/route/cctv-route');
+var cctvRoute = require('../app/route/cctv_att-route');
+var employeeRoute=require('../app/route/employee.route');
 var errorCode = require('../common/error-code')
-var errorMessage = require('../common/error-method')
+//var errorMessage = require('../common/error-method')
 var checkToken = require('./secureRoute');
 const fs = require('fs');
 
@@ -32,6 +33,8 @@ app.use(bodyParser.json());
 var router = express.Router();
 app.use('/api',router)
 cctvRoute.init(router)
+employeeRoute.init(router)
+
 
 
 
@@ -54,6 +57,8 @@ app.use(function (err, req, res, next) {
 var ApiConfig = {
   app: app
 }
+
+
 
 
 cctvRoute.init(secureApi);
