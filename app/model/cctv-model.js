@@ -27,7 +27,7 @@ function addattendance_detail(emp_id,emp_name,device_id,time,date) {
 
     return new Promise((resolve,reject) => {
      //  db.query("INSERT INTO `CCTV`.`cctv_Details`(`cctv_id`,`cctv_name`,`emp_name`,`percentage`,`location`,`time`) VALUE('"+cctv_id+"','"+cctv_name+"','"+emp_name+"','"+percentage+"','"+location+"','"+dateFormat(now,"hh:MM:ss")+"')",(error,rows,fields)=>{
-        db.query(`SELECT * FROM attendance WHERE emp_name = "${emp_name}" ORDER BY serial_no DESC LIMIT 1`,(error,rows,fields)=>{
+        db.query(`SELECT * FROM attendance WHERE emp_name = "${emp_name}" and date="${date}" ORDER BY serial_no DESC LIMIT 1`,(error,rows,fields)=>{
       //  console.log(dateFormat(times,"yyyy-mm-dd"));
       //  console.log(dateFormat(times ,"hh:MM:ss"));
       console.log("========> New api call")
