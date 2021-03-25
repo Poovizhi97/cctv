@@ -35,6 +35,7 @@ function getAllattendance_details(req,res) {
      var device_id=req.query.device_id;
      var time=req.query.time;
      var date=req.query.date;
+     console.log(req.query)
     // var intime=req.query.intime;
     // var outtime=req.query.outtime;
     // var date=req.query.date;
